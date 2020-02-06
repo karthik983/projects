@@ -1,0 +1,18 @@
+.perc{
+    border:2px solid black;
+    width:40em;
+    height:15em;
+    display:flex;
+    flex-wrap:wrap;
+}
+.work{
+    background-color:violet;
+    width:40em;
+    height:15em;
+}
+.bat{
+    padding:0px;
+    margin:0px;
+    display:flex;
+    justify-content: center;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./app-1.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Battery Status</h1>
+    <div class="perc">
+        <div class="work">
+            <h1 class="bat"></h1>
+        </div>
+
+    </div>
+
+</body>
+<script>
+setTimeout(function(){navigator.getBattery().then(function(battery) {
+    let batLevel=Math.trunc(battery.level*100);
+        // console.log(battery.level)
+document.querySelector(".bat").innerHTML=batLevel+"%";
+document.querySelector(".work").style.width=batLevel+"%";
+if(batLevel<90 && batLevel>=72){
+    document.querySelector(".work").style.backgroundColor="green";
+}
+else if(batLevel<70 && batLevel>=50){
+    document.querySelector(".work").style.backgroundColor="yellow";
+}
+else if(batLevel<50 && batLevel>=20){
+    document.querySelector(".work").style.backgroundColor="red";
+}
+})},1000);
+</script>
+</html>
